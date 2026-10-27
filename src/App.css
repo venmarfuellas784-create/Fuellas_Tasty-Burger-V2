@@ -1,0 +1,375 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0d0d0d;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background-color: #000;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+/* CART BUTTON & ANIMATIONS */
+.cart-btn {
+  background: #ffb703;
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.cart-btn:hover {
+  background: #ffa000;
+}
+
+/* ✨ CART BOUNCE ANIMATION CLASS */
+.cart-bounce {
+  animation: bounceCart 0.4s ease-in-out;
+}
+
+@keyframes bounceCart {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.35);
+    background-color: #ffca28;
+    box-shadow: 0 0 15px #ffb703;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ✨ NOTIFICATION BANNER WITH FADE-IN ANIMATION */
+.notification-banner {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffb703;
+  color: #000;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    top: -50px;
+    opacity: 0;
+  }
+  to {
+    top: 20px;
+    opacity: 1;
+  }
+}
+
+/* HERO BANNER */
+.hero {
+  text-align: center;
+  padding: 30px 20px;
+  background: radial-gradient(circle, #222 0%, #0d0d0d 100%);
+}
+
+.hero-title {
+  font-size: 4rem;
+  color: #ffb703;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+  font-weight: 900;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.burger-image-container {
+  position: relative;
+}
+
+.main-burger-img {
+  width: 320px;
+  border-radius: 15px;
+}
+
+.price-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #000;
+  color: #ffb703;
+  font-weight: bold;
+  font-size: 1.3rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.hero-text {
+  max-width: 250px;
+  text-align: left;
+}
+
+.order-btn {
+  background-color: #ffb703;
+  border: none;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.order-btn:hover {
+  background-color: #ffa000;
+}
+
+/* MENU SECTION */
+.menu-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.burger-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.burger-card {
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease;
+}
+
+.burger-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.burger-card h2 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.description {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-bottom: 15px;
+  min-height: 50px;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.quantity-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.quantity-controls button {
+  background-color: #ffb703;
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.quantity-controls button:hover {
+  background-color: #ffa000;
+}
+
+.add-cart-btn {
+  background-color: #ffb703;
+  color: #000;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.add-cart-btn:hover {
+  background-color: #ffa000;
+}
+
+.add-cart-btn:active {
+  transform: scale(0.98);
+}
+
+/* CART MODAL POPUP */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  color: white;
+  border: 1px solid #ffb703;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  color: #ffb703;
+}
+
+.empty-msg {
+  color: #aaa;
+  margin: 20px 0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  margin-top: 15px;
+  color: #ffb703;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.close-btn {
+  background: #444;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  flex: 1;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #555;
+}
+
+.checkout-btn {
+  background: #ffb703;
+  color: black;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  flex: 1;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background: #ffa000;
+}
+
+.clickable-card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.clickable-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(255, 183, 3, 0.15);
+  border: 1px solid rgba(255, 183, 3, 0.3);
+}
+
+.burger-detail-modal {
+  text-align: center;
+}
+
+.detail-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.detail-desc {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
